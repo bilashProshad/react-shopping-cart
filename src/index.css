@@ -48,3 +48,14 @@ h2 {
   margin: 15rem auto 0;
   padding: 3.2rem;
 }
+
+.error {
+  font-size: 1.4rem;
+  color: red;
+  font-weight: 500;
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
