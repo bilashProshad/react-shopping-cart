@@ -1,0 +1,43 @@
+.sidebar {
+  min-width: 30rem;
+  background-color: #324154;
+  height: 100vh;
+  color: #fff;
+  margin-top: 7.4rem;
+  position: fixed;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-top: 1.6rem;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-left: 3.5rem;
+}
+
+.filters div {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  font-size: 1.6rem;
+}
+
+.filters button {
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  padding: 1rem 3.2rem;
+  width: fit-content;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s;
+}
+
+.filters button:hover {
+  background-color: #d0cece;
+}

@@ -1,7 +1,13 @@
-import React from "react";
+import products from "../../data";
+import Items from "../Items/Items";
+import classes from "./Home.module.css";
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div className={classes.home}>
+      <Items products={products} />
+    </div>
+  );
 };
 
 export default Home;

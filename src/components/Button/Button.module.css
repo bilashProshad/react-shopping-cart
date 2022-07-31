@@ -10,5 +10,6 @@
 }
 
 .button:hover {
-  background-color: #3d4c60;
+  /* background-color: #3d4c60; */
+  opacity: 0.85;
 }

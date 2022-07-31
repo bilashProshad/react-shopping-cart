@@ -1,0 +1,8 @@
+.header {
+  display: flex;
+  gap: 1rem;
+}
+
+.header div {
+  min-width: 30rem;
+}

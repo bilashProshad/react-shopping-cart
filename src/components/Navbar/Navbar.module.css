@@ -1,11 +1,15 @@
 .header {
   background-color: #131921;
+  width: 100%;
+  position: fixed;
+  top: 0;
 }
 
 .nav-container {
-  max-width: 130rem;
+  /* max-width: 130rem; */
   margin: 0 auto;
   height: 7.4rem;
+  padding: 0 4.8rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -59,6 +63,57 @@
 
 .profile-logo {
   width: 4.8rem;
+  display: block;
+  cursor: pointer;
+  position: relative;
+}
+
+.profile-logo img {
+  max-width: 100%;
   border-radius: 50%;
-  object-fit: cover;
+  transition: all 0.3s;
+}
+
+.profile-logo img:hover {
+  opacity: 0.8;
+}
+
+.profile-logo .dropdown {
+  position: absolute;
+  top: 5.5rem;
+  left: -4rem;
+  background-color: #fff;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 1rem;
+  min-width: 13rem;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgb(211, 210, 210);
+  border-radius: 10px;
+}
+
+.profile-logo .dropdown::before {
+  content: "";
+  position: absolute;
+  top: -2.5rem;
+  left: 5rem;
+  height: 0;
+  width: 0;
+  border: 1.5rem solid transparent;
+  border-bottom: 1.5rem solid #fff;
+}
+
+.profile-logo .dropdown p {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.profile-logo .dropdown button {
+  background-color: red;
+}
+
+.profile-logo .dropdown button:hover {
+  opacity: 0.6;
 }

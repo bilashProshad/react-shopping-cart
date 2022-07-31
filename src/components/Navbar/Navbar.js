@@ -1,9 +1,21 @@
+import { useRef } from "react";
 import { BiSearch } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import logo from "../../assets/profile-1.jpg";
+import Button from "../Button/Button";
 import classes from "./Navbar.module.css";
 
 const Navbar = () => {
+  const dropDownRef = useRef();
+
+  const showDropDown = () => {
+    dropDownRef.current.style.display = "flex";
+  };
+
+  const hideDropDown = () => {
+    dropDownRef.current.style.display = "none";
+  };
+
   return (
     <header className={classes.header}>
       <div className={classes["nav-container"]}>
@@ -29,7 +41,19 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <img src={logo} alt="logo" className={classes["profile-logo"]} />
+              <span
+                className={classes["profile-logo"]}
+                onMouseEnter={showDropDown}
+                onMouseLeave={hideDropDown}
+              >
+                <img src={logo} alt="logo" />
+                <div className={classes.dropdown} ref={dropDownRef}>
+                  <p>
+                    Hello, <strong>Bilash</strong>
+                  </p>
+                  <Button>Sign out</Button>
+                </div>
+              </span>
             </li>
           </ul>
         </nav>
