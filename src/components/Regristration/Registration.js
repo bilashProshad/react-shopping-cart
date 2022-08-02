@@ -5,6 +5,7 @@ import Button from "../Button/Button";
 import Card from "../Card/Card";
 import Form from "../Form/Form";
 import Input from "../Input/Input";
+import Navbar from "../Navbar/Navbar";
 
 const Registration = () => {
   const [fullName, setFullName] = useState("");
@@ -38,42 +39,46 @@ const Registration = () => {
   }
 
   return (
-    <Card className="forms">
-      <h2>Registration</h2>
-      <Form onSubmit={handleSubmit}>
-        <Input
-          type="text"
-          placeholder="full name"
-          onChange={(e) => setFullName(e.target.value)}
-          required
-        />
-        <Input
-          type="text"
-          placeholder="email"
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <Input
-          type="password"
-          placeholder="password"
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <Input
-          type="password"
-          placeholder="confirm password"
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          required
-        />
-        <p className="form-link">
-          Already have an account? <Link to="/login">Login</Link>
-        </p>
-        {error && <p className="error">{error}</p>}
-        <Button disabled={loading} type="submit">
-          Registration
-        </Button>
-      </Form>
-    </Card>
+    <>
+      <Navbar />
+
+      <Card className="forms">
+        <h2>Registration</h2>
+        <Form onSubmit={handleSubmit}>
+          <Input
+            type="text"
+            placeholder="full name"
+            onChange={(e) => setFullName(e.target.value)}
+            required
+          />
+          <Input
+            type="text"
+            placeholder="email"
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <Input
+            type="password"
+            placeholder="password"
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <Input
+            type="password"
+            placeholder="confirm password"
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
+          <p className="form-link">
+            Already have an account? <Link to="/login">Login</Link>
+          </p>
+          {error && <p className="error">{error}</p>}
+          <Button disabled={loading} type="submit">
+            Registration
+          </Button>
+        </Form>
+      </Card>
+    </>
   );
 };
 

@@ -1,12 +1,13 @@
 import { useRef } from "react";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import logo from "../../assets/profile-1.jpg";
+import logo from "../../assets/profile.png";
 import { useAuthContext } from "../../contexts/AuthContext";
 import Button from "../Button/Button";
 import classes from "./Navbar.module.css";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const dropDownRef = useRef();
 
   const showDropDown = () => {
@@ -35,6 +36,18 @@ const Navbar = () => {
           <ul className={classes["navbar-list"]}>
             {currentUser ? (
               <>
+                <li>
+                  <Button
+                    type="button"
+                    className={classes["cart-button"]}
+                    onClick={props.onShowCart}
+                  >
+                    <span>
+                      <AiOutlineShoppingCart className={classes["cart-icon"]} />{" "}
+                      <span className={classes["cart-item-count"]}>0</span>
+                    </span>
+                  </Button>
+                </li>
                 <li>
                   <span
                     className={classes["profile-logo"]}

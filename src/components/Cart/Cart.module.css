@@ -1,0 +1,31 @@
+.cart-modal {
+  width: 30%;
+  background-color: #fff;
+  z-index: 6;
+  padding: 2rem 4rem;
+}
+
+hr {
+  margin-top: 1rem;
+}
+
+.cart-order-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: end;
+  margin-top: 1rem;
+}
+
+.cart-order-buttons button {
+  padding: 1rem 2rem;
+}
+
+.cart-order-buttons button:first-child {
+  background: transparent;
+  color: gray;
+  border: 1px solid gray;
+}
+
+.cart-order-buttons button:hover {
+  transform: scale(0.9);
+}

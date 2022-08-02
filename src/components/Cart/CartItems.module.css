@@ -1,0 +1,47 @@
+.cart-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-details h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.cart-price {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  color: gray;
+}
+
+.cart-amount {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 0.2rem;
+}
+
+.cart-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-buttons button {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: transparent;
+  border: 1px solid gray;
+  color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.cart-buttons button:hover {
+  transform: scale(0.9);
+}

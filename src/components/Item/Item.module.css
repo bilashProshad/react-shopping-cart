@@ -6,7 +6,8 @@
 }
 
 .item:hover {
-  transform: translateY(-0.5rem);
+  /* transform: translateY(-0.5rem); */
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
 }
 
 .item img {

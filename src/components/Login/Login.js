@@ -5,6 +5,7 @@ import Button from "../Button/Button";
 import Card from "../Card/Card";
 import Form from "../Form/Form";
 import Input from "../Input/Input";
+import Navbar from "../Navbar/Navbar";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -31,30 +32,34 @@ const Login = () => {
   };
 
   return (
-    <Card className="forms">
-      <h2>Login</h2>
-      <Form onSubmit={handleSubmit}>
-        <Input
-          type="text"
-          placeholder="email"
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <Input
-          type="password"
-          placeholder="password"
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <p className="form-link">
-          Don't have an account? <Link to="/registration">Register</Link>
-        </p>
-        {error && <p className="error">{error}</p>}
-        <Button disabled={loading} type="submit">
-          Login
-        </Button>
-      </Form>
-    </Card>
+    <>
+      <Navbar />
+
+      <Card className="forms">
+        <h2>Login</h2>
+        <Form onSubmit={handleSubmit}>
+          <Input
+            type="text"
+            placeholder="email"
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <Input
+            type="password"
+            placeholder="password"
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <p className="form-link">
+            Don't have an account? <Link to="/registration">Register</Link>
+          </p>
+          {error && <p className="error">{error}</p>}
+          <Button disabled={loading} type="submit">
+            Login
+          </Button>
+        </Form>
+      </Card>
+    </>
   );
 };
 
