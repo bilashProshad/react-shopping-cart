@@ -4,6 +4,7 @@ import { BiSearch } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import logo from "../../assets/profile.png";
 import { useAuthContext } from "../../contexts/AuthContext";
+import { useCartContext } from "../../contexts/cart-context";
 import Button from "../Button/Button";
 import classes from "./Navbar.module.css";
 
@@ -19,6 +20,8 @@ const Navbar = (props) => {
   };
 
   const { currentUser, logout } = useAuthContext();
+  const { items } = useCartContext();
+  const totalItems = items.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <header className={classes.header}>
@@ -44,7 +47,9 @@ const Navbar = (props) => {
                   >
                     <span>
                       <AiOutlineShoppingCart className={classes["cart-icon"]} />{" "}
-                      <span className={classes["cart-item-count"]}>0</span>
+                      <span className={classes["cart-item-count"]}>
+                        {totalItems}
+                      </span>
                     </span>
                   </Button>
                 </li>

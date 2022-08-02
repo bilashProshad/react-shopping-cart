@@ -3,6 +3,16 @@
   background-color: #fff;
   z-index: 6;
   padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-items-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  font-weight: 500;
 }
 
 hr {

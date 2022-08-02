@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
+import { useCartContext } from "../../contexts/cart-context";
 import Button from "../Button/Button";
 import Card from "../Card/Card";
 import Rating from "../Rating/Rating";
@@ -9,11 +10,14 @@ const Item = ({ product }) => {
   const { currentUser } = useAuthContext();
   const navigate = useNavigate();
 
-  const addCartHandler = () => {
+  const { addItem } = useCartContext();
+
+  const addCartHandler = (item) => {
     if (!currentUser) {
       navigate("/login");
       return;
     }
+    addItem({ ...item, quantity: 1 });
   };
 
   return (
@@ -24,7 +28,10 @@ const Item = ({ product }) => {
         <p>${product.price}</p>
         <p>4 days delivery</p>
         <Rating rating={product.rating} />
-        <Button className={classes["btn-add"]} onClick={addCartHandler}>
+        <Button
+          className={classes["btn-add"]}
+          onClick={() => addCartHandler(product)}
+        >
           Add to cart
         </Button>
         {/* <Button className={classes["btn-remove"]}>Remove from cart</Button> */}

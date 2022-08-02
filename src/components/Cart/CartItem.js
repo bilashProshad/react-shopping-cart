@@ -1,21 +1,26 @@
 import React from "react";
+import { useCartContext } from "../../contexts/cart-context";
 import Button from "../Button/Button";
 import classes from "./CartItem.module.css";
 
-const CartItem = () => {
+const CartItem = ({ product }) => {
+  const { addItem, removeItem } = useCartContext();
+
   return (
     <>
       <div className={classes["cart-details"]}>
         <div>
-          <h3>Name</h3>
+          <h3>{product.name}</h3>
           <div className={classes["cart-price"]}>
-            <span>$100</span>
-            <span className={classes["cart-amount"]}>X2</span>
+            <span>${product.price}</span>
+            <span className={classes["cart-amount"]}>X{product.quantity}</span>
           </div>
         </div>
         <div className={classes["cart-buttons"]}>
-          <Button>-</Button>
-          <Button>+</Button>
+          <Button onClick={() => removeItem(product.id)}>-</Button>
+          <Button onClick={() => addItem({ ...product, quantity: 1 })}>
+            +
+          </Button>
         </div>
       </div>
 
